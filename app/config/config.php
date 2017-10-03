@@ -14,6 +14,7 @@ return new \Phalcon\Config([
         'password'    => '',
         'dbname'      => 'example',
         'charset'     => 'utf8',
+        'unix_socket' => "/Applications/XAMPP/xamppfiles/var/mysql/mysql.sock"
     ],
     'application' => [
         'appDir'         => APP_PATH . '/',
