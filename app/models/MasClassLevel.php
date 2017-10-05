@@ -81,6 +81,7 @@ class MasClassLevel extends \Phalcon\Mvc\Model
     public function initialize()
     {
         $this->setSchema("example");
+        $this->setSource('masclassgroup');
     }
 
     /**

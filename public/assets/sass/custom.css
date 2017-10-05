@@ -46,4 +46,54 @@ body {
   -moz-border-radius: 6px 0 6px 6px;
   border-radius: 6px 0 6px 6px; }
 
+.hidden {
+  display: none; }
+
+.grid {
+  display: block !important; }
+
+.jqx-tabs-content-element .jqx-rc-b .jqx-rc-b {
+  display: none !important; }
+
+.label-control {
+  font-size: 14px; }
+
+.form-control {
+  width: 100%;
+  font-size: 13px; }
+
+.form-group {
+  margin-bottom: 20px; }
+
+.glyphicon {
+  margin-right: 5px; }
+
+#deleterowbutton {
+  color: red; }
+
+#deletelevelbutton {
+  color: red; }
+
+.jqx-window .jqx-window-header {
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  width: calc(100% - 20px) !important; }
+.jqx-window .jqx-window-content {
+  padding: 0; }
+  .jqx-window .jqx-window-content .jqx-window-content-body {
+    padding: 10px; }
+  .jqx-window .jqx-window-content .jqx-window-content-body-view {
+    padding: 20px; }
+.jqx-window .jqx-window-footer {
+  text-align: right;
+  padding: 15px;
+  border-top: 1px solid lightgray;
+  position: absolute;
+  width: 95%;
+  bottom: 0; }
+  .jqx-window .jqx-window-footer .btn {
+    margin-bottom: 0; }
+
 /*# sourceMappingURL=custom.css.map */

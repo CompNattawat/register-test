@@ -25,27 +25,27 @@
               </ul>
             </li>
             <li class="dropdown-submenu"><a href="#">ข้อมูลหลักทะเบียน <span class="caret-right"></span></a>
-              <ul class="dropdown-menu"><li><a href="javascript:void(null)" onClick="app.menuClick('ข้อมูลกลุ่มสาระวิชา', '/example/backend/master/massubjectgroup');">ข้อมูลกลุ่มสาระวิชา</a></li>
-                <li><a href="javascript:void(null)" onClick="app.menuClick('ข้อมูลประเภทรายวิชา', '/example/backend/master/massubjecttype');">ข้อมูลประเภทรายวิชา</a></li>
-                <li><a href="javascript:void(null)" onClick="app.menuClick('ข้อมูลรายวิชา', '/example/backend/master/massubject');">ข้อมูลรายวิชา</a></li>
-                <li><a href="javascript:void(null)" onClick="app.menuClick('ข้อมูลคำนำหน้าชื่อ', '/example/backend/master/masprefixname');">ข้อมูลคำนำหน้าชื่อ</a></li>
+              <ul class="dropdown-menu"><li><a href="#" >ข้อมูลกลุ่มสาระวิชา</a></li>
+                <li><a href="#" >ข้อมูลประเภทรายวิชา</a></li>
+                <li><a href="#" >ข้อมูลรายวิชา</a></li>
+                <li><a href="#" >ข้อมูลคำนำหน้าชื่อ</a></li>
               </ul>
             </li>
           </ul>
         </li>
         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">ระเบียน <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="javascript:void(null)" onClick="app.menuClick('ข้อมูลปีการศึกษา', '/example/backend/school/acadyear');">ข้อมูลปีการศึกษา</a></li>
-            <li><a href="javascript:void(null)" onClick="app.menuClick('ข้อมูลหลักสตร', '/example/backend/school/course');">ข้อมูลหลักสตร</a></li>
-            <li><a href="javascript:void(null)" onClick="app.menuClick('ข้อมูลอาจารย์', '/example/backend/teacher');">ข้อมูลอาจารย์</a></li>
-            <li><a href="javascript:void(null)" onClick="app.menuClick('ข้อมูลนักเรียน', '/example/backend/school/studentinfo');">ข้อมูลนักเรียน</a></li>
+            <li><a href="#" >ข้อมูลปีการศึกษา</a></li>
+            <li><a href="#" >ข้อมูลหลักสตร</a></li>
+            <li><a href="#" >ข้อมูลอาจารย์</a></li>
+            <li><a href="#" >ข้อมูลนักเรียน</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"> &nbsp;จัดการระบบ <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="javascript:void(null)" onClick="app.menuClick('ข้อมูลโครงสร้างระบบ', '/example/backend/system/sysmodule');">ข้อมูลโครงสร้างระบบ</a></li>
-            <li><a href="javascript:void(null)" onClick="app.menuClick('ข้อมูลการใช้งาน', '/example/backend/system/syslogs');">ข้อมูลการใช้งาน</a></li>
+            <li><a href="#" >ข้อมูลโครงสร้างระบบ</a></li>
+            <li><a href="#" >ข้อมูลการใช้งาน</a></li>
           </ul>
         </li>
       </ul>
@@ -70,25 +70,253 @@
       <!-- BEGIN CONTENT BODY -->
         
 
-<div id="tabs_panel" class="swiper-tabs">
-  <div class="container-tabs">
-    <ul id="tab-list" class="nav nav-tabs" role="tablist">
-      <li class="active"><a href="#tabs_main" data-target="#tabs_main" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-home icon"></span> <span>หน้าแรก</span></a></li>
-      
-    </ul>
-  </div>
-  <div class="tab-content">
-    <div id="tabs_main" class="tab-pane active">
-      &nbsp;
-      เทส
-      <?php foreach ($masclassgroup as $class) { ?>
-        <?= $class->ClassGroupTh ?>
-      <?php } ?>
+<body class='default'>
+  <div id='jqxWidget'>
+    <div style='float: left; width:100%;'>
+      <div id='jqxTabs'>
+        <ul style='margin-left: 10px;'>
+          <li hasclosebutton='false'>หน้าหลัก</li>
+          
+        </ul>
+        <div>
+          <?php foreach ($masclasslevel as $class) { ?>
+          <?= $class->ClassLevelID ?>
+          <?= $class->ClassGroupID ?>
+          <?= $class->ClassLevelNameTh ?>
+
+          ///
+
+          <?php } ?>
+        </div>
+        <div class="grid">
+        </div>
+        <!-- Modal Zone -->
+
+        <!-- Modal Group -->
+
+        <div class="data-modal" id="formAddDataSchool">
+          <div >เพิ่มข้อมูล</div>
+          <form class="formAddDataSchool">
+            <div class="jqx-window-content-body">
+
+              <div class="form-group">
+                <label class="label-control" for="ClassGroupTh">ช่วงชั้น*(Th) :</label>
+                <input class="form-control" type="text" class="ClassGroupTh" name="ClassGroupTh">
+              </div>
+
+              <div class="form-group">
+                <label class="label-control" for="ClassGroupEn">ช่วงชั้น (En) :</label>
+                <input class="form-control" type="text" class="ClassGroupEn" name="ClassGroupEn">
+              </div>
+
+              <div class="form-group">
+                <label class="label-control" for="ClassGroupSorting">เรียงลำดับ * :</label>
+                <input class="form-control" type="text" class="ClassGroupSorting" name="ClassGroupSorting">
+              </div>
+
+              <div class="jqx-window-footer">
+                <button type="button" class="btn btn-default btn-close" >ยกเลิก</button>
+                <input type="submit" class="btn btn-primary btn-save" value="บันทึก">
+              </div><!--/.jqx-windowfooter-->
+            </div><!--/.jqx-windowbody-->
+          </form>
+        </div><!-- /.modal -->
+
+
+        <div class="data-modal" id="formEditDataSchool">
+          <div >แก้ไขข้อมูล</div>
+          <form class="formEditDataSchool">
+            <div class="jqx-window-content-body">
+              <!-- Hidden Zone -->
+              <input type="hidden" name="ClassGroupID" class="ClassGroupID" value="">
+
+              <div class="form-group">
+                <label class="label-control" for="ClassGroupTh">ช่วงชั้น*(Th) :</label>
+                <input class="form-control" type="text" class="ClassGroupTh" name="ClassGroupTh">
+              </div>
+
+              <div class="form-group">
+                <label class="label-control" for="ClassGroupEn">ช่วงชั้น (En) :</label>
+                <input class="form-control" type="text" class="ClassGroupEn" name="ClassGroupEn">
+              </div>
+
+              <div class="form-group">
+                <label class="label-control" for="ClassGroupSorting">เรียงลำดับ * :</label>
+                <input class="form-control" type="text" class="ClassGroupSorting" name="ClassGroupSorting">
+              </div>
+
+              <div class="jqx-window-footer">
+                <button type="button" class="btn btn-default btn-close" >ยกเลิก</button>
+                <input type="submit" class="btn btn-primary btn-save" value="บันทึก">
+              </div><!--/.jqx-windowfooter-->
+            </div><!--/.jqx-windowbody-->
+          </form>
+        </div><!-- /.modal -->
+
+        <div class="data-modal" id="formViewDataSchool">
+          <div >ดูข้อมูล</div>
+          <form class="formViewDataSchool">
+            <div class="jqx-window-content-body-view">
+              <div class="form-group">
+                <label class="label-control" for="ClassGroupTh">ช่วงชั้น*(Th) : </label>
+                <label class="label-control ClassGroupTh col-md-offset-1" ></label>
+              </div>
+
+              <div class="form-group">
+                <label class="label-control" for="ClassGroupEn">ช่วงชั้น (En) :</label>
+                <label class="label-control ClassGroupEn col-md-offset-1" ></label>
+              </div>
+
+              <div class="form-group">
+                <label class="label-control" for="ClassGroupSorting">เรียงลำดับ * :</label>
+                <label class="label-control ClassGroupSorting col-md-offset-1" ></label>
+              </div>
+
+              <div class="jqx-window-footer">
+                <button type="button" class="btn btn-default btn-close" >ปิด</button>
+              </div><!--/.jqx-windowfooter-->
+            </div><!--/.jqx-windowbody-->
+          </form>
+        </div><!-- /.modal -->
+
+        <div class="data-modal" id="formDeleteDataSchool">
+          <div >ลบข้อมูล </div>
+          <form class="formDeleteDataSchool">
+            <div class="jqx-window-content-body">
+              <!-- Hidden Zone -->
+              <input type="hidden" name="ClassGroupID" class="ClassGroupID" value="">
+
+              <div class="form-group">
+                <label class="label-control" > คุณต้องการลบข้อมูลที่ถูกเลือก ใช่หรือไม่? </label>
+              </div>
+
+              <div class="jqx-window-footer">
+                <button type="button" class="btn btn-default btn-close" >ยกเลิก</button>
+                <input type="submit" class="btn btn-danger btn-delete" value="บันทึก">
+              </div><!--/.jqx-windowfooter-->
+            </div><!--/.jqx-windowbody-->
+          </form>
+        </div><!-- /.modal -->
+
+        <!-- Modal Level -->
+
+        <div class="data-modal" id="formAddDataLevel">
+          <div >เพิ่มข้อมูล</div>
+          <form class="formAddDataLevel">
+            <div class="jqx-window-content-body">
+
+              <div class="form-group">
+                <label class="label-control" for="ClassGroupID">ช่วงชั้นที่ * :</label>
+                <input class="form-control" type="text" class="ClassGroupID" name="ClassGroupID">
+              </div>
+
+              <div class="form-group">
+                <label class="label-control" for="ClassLevelNameTh">ชื่อระดับ *(Th) :</label>
+                <input class="form-control" type="text" class="ClassLevelNameTh" name="ClassLevelNameTh">
+              </div>
+
+              <div class="form-group">
+                <label class="label-control" for="ClassLevelNameEn">ชื่อระดับ (En) :</label>
+                <input class="form-control" type="text" class="ClassLevelNameEn" name="ClassLevelNameEn">
+              </div>
+
+              <div class="form-group">
+                <label class="label-control" for="ClassLevelSorting">เรียงลำดับ * :</label>
+                <input class="form-control" type="text" class="ClassLevelSorting" name="ClassLevelSorting">
+              </div>
+
+              <div class="jqx-window-footer">
+                <button type="button" class="btn btn-default btn-close" >ยกเลิก</button>
+                <input type="submit" class="btn btn-primary btn-save" value="บันทึก">
+              </div><!--/.jqx-windowfooter-->
+            </div><!--/.jqx-windowbody-->
+          </form>
+        </div><!-- /.modal -->
+
+
+        <div class="data-modal" id="formEditDataLevel">
+          <div >แก้ไขข้อมูล</div>
+          <form class="formEditDataLevel">
+            <div class="jqx-window-content-body">
+              <!-- Hidden Zone -->
+              <input type="hidden" name="ClassLevelID" class="ClassLevelID" value="">
+
+              <div class="form-group">
+                <label class="label-control" for="ClassLevelNameTh">ชื่อระดับ*(Th) :</label>
+                <input class="form-control" type="text" class="ClassLevelNameTh" name="ClassLevelNameTh">
+              </div>
+
+              <div class="form-group">
+                <label class="label-control" for="ClassLevelNameEn">ชื่อระดับ (En) :</label>
+                <input class="form-control" type="text" class="ClassLevelNameEn" name="ClassLevelNameEn">
+              </div>
+
+              <div class="form-group">
+                <label class="label-control" for="ClassLevelSorting">เรียงลำดับ * :</label>
+                <input class="form-control" type="text" class="ClassLevelSorting" name="ClassLevelSorting">
+              </div>
+
+              <div class="jqx-window-footer">
+                <button type="button" class="btn btn-default btn-close" >ยกเลิก</button>
+                <input type="submit" class="btn btn-primary btn-save" value="บันทึก">
+              </div><!--/.jqx-windowfooter-->
+            </div><!--/.jqx-windowbody-->
+          </form>
+        </div><!-- /.modal -->
+
+        <div class="data-modal" id="formViewDataLevel">
+          <div >ดูข้อมูล</div>
+          <form class="formViewDataLevel">
+            <div class="jqx-window-content-body-view">
+              <!-- Hidden Zone -->
+
+              <div class="form-group">
+                <label class="label-control" for="ClassLevelNameTh">ชื่อระดับ*(Th) : </label>
+                <label class="label-control ClassLevelNameTh col-md-offset-1" ></label>
+              </div>
+
+              <div class="form-group">
+                <label class="label-control" for="ClassLevelNameEn">ชื่อระดับ (En) :</label>
+                <label class="label-control ClassLevelNameEn col-md-offset-1" ></label>
+              </div>
+
+              <div class="form-group">
+                <label class="label-control" for="ClassLevelSorting">เรียงลำดับ * :</label>
+                <label class="label-control ClassLevelSorting col-md-offset-1" ></label>
+              </div>
+
+              <div class="jqx-window-footer">
+                <button type="button" class="btn btn-default btn-close" >ปิด</button>
+              </div><!--/.jqx-windowfooter-->
+            </div><!--/.jqx-windowbody-->
+          </form>
+        </div><!-- /.modal -->
+
+        <div class="data-modal" id="formDeleteDataLevel">
+          <div >ลบข้อมูล </div>
+          <form class="formDeleteDataLevel">
+            <div class="jqx-window-content-body">
+              <!-- Hidden Zone -->
+              <input type="hidden" name="ClassLevelID" class="ClassLevelID" value="">
+
+              <div class="form-group">
+                <label class="label-control" > คุณต้องการลบข้อมูลที่ถูกเลือก ใช่หรือไม่? </label>
+              </div>
+
+              <div class="jqx-window-footer">
+                <button type="button" class="btn btn-default btn-close" >ยกเลิก</button>
+                <input type="submit" class="btn btn-danger btn-delete" value="บันทึก">
+              </div><!--/.jqx-windowfooter-->
+            </div><!--/.jqx-windowbody-->
+          </form>
+        </div><!-- /.modal -->
+      </div>
+
     </div>
 
-  </div>
-</div>
 
+  </div>
+</body>
 
 
 
