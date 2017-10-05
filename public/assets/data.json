@@ -1,5 +1,0 @@
-{
-"employee":{ "name":"John", "age":30, "city":"New York" },
-"employee":{ "name":"John", "age":30, "city":"New 2" },
-"employee":{ "name":"John", "age":30, "city":"New 3" }
-}
