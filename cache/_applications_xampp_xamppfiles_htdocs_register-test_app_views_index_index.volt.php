@@ -79,10 +79,10 @@
           
         </ul>
         <div>
-          <?php foreach ($masclasslevel as $class) { ?>
-          <?= $class->ClassLevelID ?>
+          <?php foreach ($masclassgroup as $class) { ?>
           <?= $class->ClassGroupID ?>
-          <?= $class->ClassLevelNameTh ?>
+          <?= $class->ClassGroupTh ?>
+          
 
           ///
 

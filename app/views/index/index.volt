@@ -11,10 +11,10 @@
           <li>Active Server Pages</li>#}
         </ul>
         <div>
-          {% for class in masclasslevel %}
-          {{ class.ClassLevelID }}
+          {% for class in masclassgroup %}
           {{ class.ClassGroupID }}
-          {{ class.ClassLevelNameTh }}
+          {{ class.ClassGroupTh }}
+          {#{{ class.ClassLevelNameTh }}#}
 
           ///
 
